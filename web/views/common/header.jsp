@@ -1,13 +1,9 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: KYS
-  Date: 2021-09-13
-  Time: 오후 12:36
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html; charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<header style="background : lightpink;">
 
-    <header style="background: lightpink">
-    <h1>홍쓰 놀이마당</h1>
-    </header>
+    <br />
+    <h1>홍길동의 웹사이트</h1>
+    <br />
 
+</header>

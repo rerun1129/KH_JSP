@@ -1,38 +1,36 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
+<%@ page import="com.kh.jdbc.member.model.vo.*" %>
+<%
+    Member m = (Member)session.getAttribute("member");
+%>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>JSP 수업내용</title>
+    <title>JDBC 연습 페이지</title>
 </head>
 <body>
-<h1>Hello JSP!</h1>
+<%@ include file="views/common/header.jsp" %> <%-- 지시자 태그 --%>
+<h1>JDBC 연습 페이지</h1>
+<% if ( m != null ) { %>
+<h3><%= m.getUserName() %>님, 환영합니다!!</h3>
+<% } %>
 
-<h3>JSP 설명 :</h3>
-<p>
-    JSP(Java Server Page), <br>
-    1997년도에 개발된 Servlet을 사용하던 <br>
-    화면 구현 개발자들이 기존 Servlet에 <br>
-    HTML, CSS 등의 화면 코드를 삽입하는데 <br>
-    어려움을 느껴 자바 개발사에 항의하여<br>
-    1998년에 만들어진 기술이다.<br>
-    이 기술로 인해 Servlet 코드 중 화면 관련 코드를 <br>
-    별도의 JSP로 쪼갬으로써 비즈니스(서비스)영역과 <br>
-    화면 구현 영역을 보다 쉽게 분리할 수 있게 되었다.
-</p>
+<% if ( m == null ) { %>
+<h3>
+    <a href="views/member/join.jsp">회원 가입</a>
+</h3>
+<% } else { %>
+<h3>
+    <a href="views/member/memberUpdate.jsp">회원 정보 수정 - 공사중 - </a>
+</h3>
+<% } %>
 
-<hr />
-
-<h3>수업 내용</h3>
-
-<ol>
-    <li><a href="views/01_page.jsp">JSP 태그</a></li>
-    <li><a href="views/02_page.jsp">JSP 라이브러리</a></li>
-    <li><a href="views/03_page.jsp">include 사용하기</a></li>
-    <li><a href="views/04_myPage.jsp">마이 페이지(화면 모듈화)</a></li>
-    <li><a href="views/05_servletAccess.jsp">서블릿 연결하기</a></li>
-</ol>
+<h3>
+    <a href="views/member/login.jsp">로그인 / 로그아웃</a>
+</h3>
+<%@ include file="views/common/footer.jsp" %>
 
 </body>
 </html>

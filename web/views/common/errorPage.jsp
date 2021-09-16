@@ -1,18 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" isErrorPage="true" %>
+		 pageEncoding="UTF-8" isErrorPage="true" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>에러 페이지</title>
+	<meta charset="UTF-8">
+	<title>에러 페이지</title>
 </head>
 <body>
-	<div style="margin-top: 25%; margin-left: auto; margin-right:auto;">
-		<h1 style="color:red;">ERROR</h1>
-		<p style="color:hotpink;">
-			만약 현재 페이지가 계속 나타날 경우, <br>
-			관리자 김용주 대리에게 연락하세요.
-		</p>
-	</div>
+<h1>ERROR 발생</h1>
+
+<%
+	String msg = (String)request.getAttribute("error-msg");
+%>
+
+<p style="color:darkred;">
+	<%= msg %>
+</p>
+
+<p>
+	같은 에러를 계속 만나신다면, <br>
+	관리자에게 문의하세요~! 010-0000-0000 김철수
+</p>
+
 </body>
 </html>
